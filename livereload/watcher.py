@@ -88,7 +88,7 @@ class Watcher(object):
         # clean filepath
         self.filepath = None
         delays = set()
-        for path in self._tasks:
+        for path in list(self._tasks):
             item = self._tasks[path]
             self._task_mtimes = item['mtimes']
             if self.is_changed(path, item['ignore']):
